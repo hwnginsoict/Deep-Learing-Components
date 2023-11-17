@@ -30,7 +30,7 @@ model = smp.UnetPlusPlus(
     in_channels=3,
     classes= 3  
 )
-check_point = torch.load('model.pth')
+check_point = torch.load('/kaggle/working/model.pth')
 
 new_state_dict = OrderedDict()
 for k, v in check_point['model'].items():
