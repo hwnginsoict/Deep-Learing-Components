@@ -1,3 +1,5 @@
+!pip install torchsummary
+!pip install torchgeometry
 from torchsummary import summary
 from torchgeometry.losses import one_hot
 import os
