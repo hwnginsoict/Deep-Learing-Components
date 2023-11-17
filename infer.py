@@ -19,9 +19,26 @@ from torch.utils.data import Dataset, DataLoader, random_split
 from torchvision.transforms import Resize, PILToTensor, ToPILImage, Compose, InterpolationMode
 from collections import OrderedDict
 import wandb
+import segmentation_models_pytorch as smp
 from UNetTestDataClass import UNetTestDataClass
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+model = smp.UnetPlusPlus(
+    encoder_name="resnet34",
+    encoder_weights='imagenet',
+    in_channels=3,
+    classes= num_classes   
+)
+check_point = torch.load('model.pth')
+
+new_state_dict = OrderedDict()
+for k, v in check_point['model'].items():
+    name = k[7:] # remove `module.`
+    new_state_dict[name] = v
+model.load_state_dict(new_state_dict)
+model = nn.DataParallel(model)
+model.to(device)
 
 transform = Compose([Resize((256, 256), interpolation=InterpolationMode.BILINEAR),
                      PILToTensor()])
