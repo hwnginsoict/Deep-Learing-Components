@@ -28,7 +28,7 @@ model = smp.UnetPlusPlus(
     encoder_name="resnet34",
     encoder_weights='imagenet',
     in_channels=3,
-    classes= num_classes   
+    classes= 3  
 )
 check_point = torch.load('model.pth')
 
