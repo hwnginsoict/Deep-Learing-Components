@@ -4,9 +4,12 @@ Phan Duc Hung 20214903
 # Infer
 Step 1: Join competition https://www.kaggle.com/competitions/bkai-igh-neopolyp to create notebook
 
-Step 2: Download model
+Step 2: Download model and libraries
 
 ```python
+!pip install torchsummary
+!pip install torchgeometry
+!pip install segmentation-models-pytorch
 import requests
 import os
 
@@ -24,6 +27,5 @@ Step 3: Infer
 ```python
 !git clone https://github.com/hwnginsoict/Deep-Learing-Components
 !cp /kaggle/working/model.pth /kaggle/working/Deep-Learning-Components
-!pip install segmentation-models-pytorch
 !python /kaggle/working/Deep-Learing-Components/infer.py
 ```
