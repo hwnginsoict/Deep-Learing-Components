@@ -13,7 +13,7 @@ Step 2: Download model and libraries
 import requests
 import os
 
-url = 'https://drive.google.com/uc?id=1sbEwXPUBCMI0wCmZfoVpVsI3i0xCUscJ&export=download&confirm=t&uuid=16d665ed-1658-4ef5-805d-e25e5460ebdf'
+url = 'https://drive.google.com/uc?id=1aIQaLP3OeJvaYpn-skLNW9ytJcqsfbID&export=download&confirm=t&uuid=4426acaa-01ff-49e2-8507-550e89a31654'
 
 save_dir = '/kaggle/working/'
 
