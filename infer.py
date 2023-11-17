@@ -1,6 +1,3 @@
-!pip install torchsummary
-!pip install torchgeometry
-!pip install segmentation-models-pytorch
 from torchsummary import summary
 from torchgeometry.losses import one_hot
 import os
